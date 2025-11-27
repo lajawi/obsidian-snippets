@@ -1,0 +1,4 @@
+thead > tr,
+tr:nth-child(even) {
+	background-color: var(--color-base-10) !important;
+}
