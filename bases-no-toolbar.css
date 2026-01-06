@@ -1,4 +1,4 @@
 :is(.bases-no-toolbar, .bases-embed[alt~="no-toolbar"]) .bases-header,
-:is(.bases-no-toolbar, .bases-embed[alt~="no-toolbar"]) .bases-embed > .edit-block-button {
+:is(.bases-no-toolbar .bases-embed, .bases-embed[alt~="no-toolbar"]) > .edit-block-button {
   display: none;
 }
