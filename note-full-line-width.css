@@ -1,0 +1,5 @@
+/* Credit: https://forum.obsidian.md/t/optional-full-width-note-css/15444/7 */
+
+.full-width {
+    --file-line-width: 100%;
+}
