@@ -1,0 +1,49 @@
+.callout[data-callout="chat"] {
+	--callout-icon: message-square;
+	--callout-color: var(--callout-quote);
+
+	.callout-content {
+		display: flex;
+		flex-direction: column;
+		padding-top: 1rem;
+	}
+
+	.callout {
+		--callout-icon: circle-user-round;
+		margin: 1px !important;
+		padding: 0.75rem;
+		max-width: 80%;
+
+		border-radius: calc(var(--callout-radius) * 4);
+
+		.callout-content {
+			padding: 0px;
+
+			:first-child {
+				margin-top: 0.5rem;
+			}
+
+			:last-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+	:is(&:not([data-callout-metadata="group"]) .callout, .callout[data-callout="you"]) .callout-title
+	{
+		display: none;
+	}
+
+	.callout[data-callout="them"] {
+		--callout-color: var(--callout-quote);
+		align-self: start;
+
+		border-bottom-left-radius: var(--callout-radius);
+	}
+
+	.callout[data-callout="you"] {
+		align-self: end;
+
+		border-bottom-right-radius: var(--callout-radius);
+	}
+}

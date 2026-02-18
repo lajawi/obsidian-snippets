@@ -58,3 +58,40 @@ Alternates the colours of markdown tables.
 #### Usage
 
 No special usage besides enabling. Applies to all markdown tables.
+
+### `callout-chat.css`
+
+Adds a callout type `chat` with which you can display chats.
+
+Each chat bubble is displayed with yet another callout nested inside the `chat` callout. The chat bubbles get types `them` and `you` to denote who is sendig what message.
+
+If you add the metadata `group` to the `chat` callout (`chat|group`), then messages displayed as `them` retain their title.
+
+#### Usage
+
+```md
+> [!chat] DM
+> > [!you]
+> > Aliquam erat volutpat. Praesent ac ante.
+> 
+> > [!you]
+> > Praesent vulputate euismod ligula. Ut ipsum.
+> 
+> > [!them]
+> > Duis facilisis nulla quis mauris tempus, nec mattis tellus.
+```
+
+```md
+> [!chat|group] Group
+> > [!them] Alice
+> > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+> 
+> > [!you]
+> > Donec congue, tortor vitae interdum.
+> 
+> > [!them] Bob
+> > Sed nec lorem et urna.
+> 
+> > [!you]
+> > Praesent felis.
+```
