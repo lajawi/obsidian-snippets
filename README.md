@@ -69,6 +69,14 @@ If you add the metadata `group` to the `chat` callout (`chat|group`), then messa
 
 #### Usage
 
+1. Create a [callout](https://help.obsidian.md/callouts) with the *type identifier* `chat`
+2. Use [nested callouts](https://help.obsidian.md/callouts#Nested%20callouts) with type identifiers `them` and `you`
+- Optionally, add the callout metadata `group` to display the titles for all `them` callouts
+
+#### Example
+
+##### Normal
+
 ```md
 > [!chat] DM
 > > [!you]
@@ -80,6 +88,8 @@ If you add the metadata `group` to the `chat` callout (`chat|group`), then messa
 > > [!them]
 > > Duis facilisis nulla quis mauris tempus, nec mattis tellus.
 ```
+
+##### Group
 
 ```md
 > [!chat|group] Group
