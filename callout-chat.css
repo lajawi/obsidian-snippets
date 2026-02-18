@@ -8,7 +8,8 @@
 		padding-top: 1rem;
 	}
 
-	.callout {
+	.callout[data-callout="them"],
+	.callout[data-callout="you"] {
 		--callout-icon: circle-user-round;
 		margin: 1px !important;
 		padding: 0.75rem;
@@ -29,7 +30,7 @@
 		}
 	}
 
-	:is(&:not([data-callout-metadata="group"]) .callout, .callout[data-callout="you"]) .callout-title
+	:is(&:not([data-callout-metadata="group"]) .callout[data-callout="them"], .callout[data-callout="you"]) .callout-title
 	{
 		display: none;
 	}
