@@ -46,4 +46,12 @@
 
 		border-bottom-right-radius: var(--callout-radius);
 	}
+
+	.callout[data-callout="them"]:has(+ .callout[data-callout="them"]) + .callout[data-callout="them"] {
+		border-top-left-radius: var(--callout-radius);
+	}
+
+	.callout[data-callout="you"]:has(+ .callout[data-callout="you"]) + .callout[data-callout="you"] {
+		border-top-right-radius: var(--callout-radius);
+	}
 }
