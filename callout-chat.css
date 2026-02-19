@@ -2,6 +2,10 @@
 	--callout-icon: message-square;
 	--callout-color: var(--callout-quote);
 
+	&[data-callout-metadata~="group"] {
+		--callout-icon: messages-square;
+	}
+
 	.callout-content {
 		display: flex;
 		flex-direction: column;
