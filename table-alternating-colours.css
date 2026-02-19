@@ -1,4 +1,6 @@
-thead > tr,
-tr:nth-child(even) {
-	background-color: var(--color-base-10) !important;
+:root * {
+	--table-row-alternate-background-color: rgba(from var(--color-base-40) r g b / 0.15);
+
+	--table-row-alt-background: var(--table-row-alternate-background-color);
+	--table-row-alt-background-hover: var(--table-row-alternate-background-color);
 }
