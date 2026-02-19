@@ -4,6 +4,10 @@
 
 	&[data-callout-metadata~="group"] {
 		--callout-icon: messages-square;
+
+		.callout[data-callout="them"] .callout-content :first-child {
+			margin-top: 0.5rem;
+		}
 	}
 
 	.callout-content {
@@ -25,7 +29,7 @@
 			padding: 0px;
 
 			:first-child {
-				margin-top: 0.5rem;
+				margin-top: 0rem;
 			}
 
 			:last-child {
