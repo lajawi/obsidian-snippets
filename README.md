@@ -113,3 +113,18 @@ Avoids putting a page break right after any heading or callout title when export
 #### Usage
 
 No special usage besides enabling. Applies to any note that is being exported.
+
+### `callout-hide-title.css`
+
+Hides the title of the specified callout.
+
+#### Usage
+
+Add `hide-title` to the metadata of a callout.
+
+#### Example
+
+```md
+> [!note|hide-title] This title is hidden
+> Only the callout's contents are displayed.
+```
