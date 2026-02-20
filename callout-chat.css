@@ -10,7 +10,7 @@
 		}
 	}
 
-	:is(&:not([data-callout-metadata="group"]) .callout[data-callout="them"], .callout[data-callout="you"]) .callout-title
+	:is(&:not([data-callout-metadata="group"]) .callout[data-callout="them"], .callout[data-callout="you"]) > .callout-title
 	{
 		display: none;
 	}
@@ -41,23 +41,8 @@
 		}
 
 		.callout[data-callout="time"] {
-			--callout-color: var(--callout-quote);
-			background: unset;
-			width: max-content;
 			margin: 0 0 0 auto;
 			padding: 0;
-
-			.callout-title {
-				display: flex;
-			}
-
-			.callout-icon {
-				display: none;
-			}
-
-			.callout-title-inner {
-				--font-weight: var(--font-weight);
-			}
 		}
 	}
 
@@ -84,19 +69,23 @@
 		}
 	}
 
-	.callout[data-callout="date"] {
+	.callout[data-callout="date"],
+	:is(.callout[data-callout="them"], .callout[data-callout="you"]) .callout[data-callout="time"] {
 		--callout-color: var(--callout-quote);
 
 		background: unset;
 		width: max-content;
-		margin: 0 auto;
-
-		.callout-title-inner {
-			--font-weight: var(--font-weight);
-		}
 
 		.callout-icon {
 			display: none;
 		}
+
+		.callout-title-inner {
+			--font-weight: var(--font-weight);
+		}
+	}
+
+	.callout[data-callout="date"] {
+		margin: 0 auto;
 	}
 }
