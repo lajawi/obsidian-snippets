@@ -69,9 +69,10 @@ If you add the metadata `group` to the `chat` callout (`chat|group`), then messa
 
 #### Usage
 
-1. Create a [callout](https://help.obsidian.md/callouts) with the *type identifier* `chat`
-2. Use [nested callouts](https://help.obsidian.md/callouts#Nested%20callouts) with type identifiers `them` and `you`
-- Optionally, add the callout metadata `group` to display the titles for all `them` callouts
+1. Create a [callout](https://help.obsidian.md/callouts) with the *type identifier* `chat` (optionally add the metadata `group`, `chat|group`)
+2. Use [nested callouts](https://help.obsidian.md/callouts#Nested%20callouts) with type identifiers `them` and `you` for the messages
+  - Optionally, add another nested callout with type identifier `time` to display sent time
+3. Optionally, you can add a nested callout with type identifier `date` to display a change of date between messages
 
 #### Example
 
@@ -81,29 +82,42 @@ If you add the metadata `group` to the `chat` callout (`chat|group`), then messa
 > [!chat] DM
 > > [!you]
 > > Aliquam erat volutpat. Praesent ac ante.
+> > > [!time] 20:45
+> 
+> > [!date] 2026.02.20
 > 
 > > [!you]
 > > Praesent vulputate euismod ligula. Ut ipsum.
+> > > [!time] 09:54
 > 
 > > [!them]
 > > Duis facilisis nulla quis mauris tempus, nec mattis tellus.
+> > > [!time] 11:31
 ```
 
 ##### Group
 
 ```md
 > [!chat|group] Group
+> > [!date] 2026.02.19
+> 
 > > [!them] Alice
 > > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+> > > [!time] 15:21
 > 
 > > [!you]
 > > Donec congue, tortor vitae interdum.
+> > > [!time] 15:24
 > 
 > > [!them] Bob
 > > Sed nec lorem et urna.
+> > > [!time] 15:24
+> 
+> > [!date] 2026.02.20
 > 
 > > [!you]
 > > Praesent felis.
+> > > [!time] 10:36
 ```
 
 ### `print-no-breaks-after-heading.css`
