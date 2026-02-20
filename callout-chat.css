@@ -1,9 +1,9 @@
 .callout[data-callout="chat"] {
-	--callout-icon: message-square;
+	--callout-icon: messages-square;
 	--callout-color: var(--callout-quote);
 
 	&[data-callout-metadata~="group"] {
-		--callout-icon: messages-square;
+		--callout-icon: users-round;
 
 		.callout[data-callout="them"] .callout-content :first-child {
 			margin-top: 0.5rem;
