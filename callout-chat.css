@@ -16,8 +16,6 @@
 	}
 
 	.callout-content {
-		display: flex;
-		flex-direction: column;
 		padding-top: 1rem;
 	}
 
@@ -45,7 +43,8 @@
 
 	.callout[data-callout="them"] {
 		--callout-color: var(--callout-quote);
-		align-self: start;
+		margin-right: auto;
+		width: max-content;
 
 		border-bottom-left-radius: var(--callout-radius);
 
@@ -55,7 +54,8 @@
 	}
 
 	.callout[data-callout="you"] {
-		align-self: end;
+		margin-left: auto;
+		width: max-content;
 
 		border-bottom-right-radius: var(--callout-radius);
 
