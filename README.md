@@ -105,3 +105,11 @@ If you add the metadata `group` to the `chat` callout (`chat|group`), then messa
 > > [!you]
 > > Praesent felis.
 ```
+
+### `print-no-breaks-after-heading.css`
+
+Avoids putting a page break right after any heading or callout title when exporting to PDF or printing.
+
+#### Usage
+
+No special usage besides enabling. Applies to any note that is being exported.
