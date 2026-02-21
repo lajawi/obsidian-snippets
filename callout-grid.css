@@ -1,0 +1,50 @@
+.callout[data-callout="grid"] {
+	--grid-columns: 2;
+
+	&[data-callout-metadata~="columns-3"] {
+		--grid-columns: 3;
+	}
+
+	> .callout-content {
+		display: grid;
+		grid-template-columns: repeat(var(--grid-columns), 1fr);
+		align-items: center;
+		gap: var(--size-4-1);
+
+		align-items: start;
+
+		> * {
+			margin: 0 !important;
+		}
+	}
+
+	& {
+		--callout-color: unset;
+		background-color: unset;
+	}
+
+	&,
+	& .callout[data-callout="image"] {
+		padding: 0;
+
+		height: 100%;
+
+		> .callout-title {
+			display: none;
+		}
+	}
+
+	& .callout[data-callout="image"] {
+		--callout-color: var(--callout-quote);
+
+		> .callout-content {
+			:first-child {
+				margin-top: 0;
+			}
+
+			:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
