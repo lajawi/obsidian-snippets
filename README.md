@@ -157,7 +157,7 @@ Add `hide-bg` or `hide-background` to the metadata of a callout.
 > [!note|hide-bg] This callout's background is not visible
 ```
 
-### `callou-border.css`
+### `callout-border.css`
 
 Makes the border on the specified callout visible.
 
