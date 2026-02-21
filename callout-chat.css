@@ -5,44 +5,48 @@
 	&[data-callout-metadata~="group"] {
 		--callout-icon: users-round;
 
-		.callout[data-callout="them"] .callout-content :first-child {
-			margin-top: 0.5rem;
+		.callout[data-callout="them"] > .callout-content > :first-child {
+			margin-top: var(--size-4-2);
 		}
 	}
 
-	:is(&:not([data-callout-metadata="group"]) .callout[data-callout="them"], .callout[data-callout="you"]) > .callout-title
-	{
+	:is(&:not([data-callout-metadata="group"]) .callout[data-callout="them"], .callout[data-callout="you"]) > .callout-title {
 		display: none;
 	}
 
-	.callout-content {
-		padding-top: 1rem;
+	> .callout-content {
+		padding-top: var(--size-4-4);
 	}
 
 	.callout[data-callout="them"],
 	.callout[data-callout="you"] {
 		--callout-icon: circle-user-round;
-		margin: 1px;
-		padding: 0.75rem;
+		margin-top: var(--size-4-2);
+		margin-bottom: var(--size-4-2);
+		padding: calc(calc(var(--size-4-2) + var(--size-4-3)) / 2);
 		max-width: 80%;
 
 		border-radius: calc(var(--callout-radius) * 4);
 
 		.callout-content {
-			padding: 0px;
+			padding: 0;
 
 			:first-child {
-				margin-top: 0rem;
+				margin-top: 0;
 			}
 
 			:last-child {
-				margin-bottom: 0px;
+				margin-bottom: 0;
 			}
 		}
 
 		.callout[data-callout="time"] {
 			margin: 0 0 0 auto;
 			padding: 0;
+		}
+
+		:has(+ .callout[data-callout="time"]) {
+			margin-bottom: var(--size-2-1);
 		}
 	}
 
@@ -51,10 +55,14 @@
 		margin-right: auto;
 		width: max-content;
 
-		border-bottom-left-radius: var(--callout-radius);
+		&:has(+ .callout[data-callout="them"]) {
+			border-bottom-left-radius: var(--callout-radius);
+			margin-bottom: var(--size-2-1);
+		}
 
 		&:has(+ .callout[data-callout="them"]) + .callout[data-callout="them"] {
 			border-top-left-radius: var(--callout-radius);
+			margin-top: var(--size-2-1);
 		}
 	}
 
@@ -62,16 +70,21 @@
 		margin-left: auto;
 		width: max-content;
 
-		border-bottom-right-radius: var(--callout-radius);
+		&:has(+ .callout[data-callout="you"]) {
+			border-bottom-right-radius: var(--callout-radius);
+			margin-bottom: var(--size-2-1);
+		}
 
 		&:has(+ .callout[data-callout="you"]) + .callout[data-callout="you"] {
 			border-top-right-radius: var(--callout-radius);
+			margin-top: var(--size-2-1);
 		}
 	}
 
 	.callout[data-callout="date"],
 	:is(.callout[data-callout="them"], .callout[data-callout="you"]) .callout[data-callout="time"] {
 		--callout-color: var(--callout-quote);
+		--callout-title-size: var(--font-smallest);
 
 		background: unset;
 		width: max-content;
@@ -86,6 +99,7 @@
 	}
 
 	.callout[data-callout="date"] {
-		margin: 0 auto;
+		padding: 0;
+		margin: var(--size-4-2) auto;
 	}
 }
