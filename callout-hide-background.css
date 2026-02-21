@@ -1,0 +1,4 @@
+.callout[data-callout-metadata~="hide-bg"],
+.callout[data-callout-metadata~="hide-background"] {
+	background: unset;
+}

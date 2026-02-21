@@ -142,3 +142,17 @@ Add `hide-title` to the metadata of a callout.
 > [!note|hide-title] This title is hidden
 > Only the callout's contents are displayed.
 ```
+
+### `callout-hide-background.css`
+
+Hides the background of the specified callout.
+
+#### Usage
+
+Add `hide-bg` or `hide-background` to the metadata of a callout.
+
+#### Example
+
+```md
+> [!note|hide-bg] This callout's background is not visible
+```
