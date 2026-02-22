@@ -206,3 +206,11 @@ This callout pairs well with metadata [hide title](#callout-hide-titlecss) and [
 > > [!danger|hide-title hide-bg]
 > > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend auctor turpis. Aliquam ac mi elementum, interdum lectus at, tincidunt mauris. Integer sagittis.
 ```
+
+### `bases-list-unset-min-height.css`
+
+Unsets the minimum height imposed on only the list view of Bases.
+
+#### Usage
+
+No special usage besides enabling. Applies to all list view Bases.
