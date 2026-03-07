@@ -9,6 +9,14 @@
 		--grid-columns: 3;
 	}
 
+	&[data-callout-metadata~="columns-4"] {
+		--grid-columns: 4;
+	}
+
+	&[data-callout-metadata~="columns-5"] {
+		--grid-columns: 5;
+	}
+
 	> .callout-content {
 		display: grid !important;
 		grid-template-columns: repeat(var(--grid-columns), 1fr);

@@ -178,7 +178,7 @@ Adds a callout type `grid` with which you can structure content in a grid instea
 #### Usage
 
 1. Set the callout type identifier to `grid`, then add content with a blank line in between to separate it into the different grid cells.
-- Optionally add the callout metadata `columns-3` to use 3 instead of 2 columns.
+- Optionally add the callout metadata `columns-3`, `colums-4`, or `colums-5` to use 3, 4, or 5 columsn respectively, instead of 2 columns.
 - Optionally use the nested callout type `image` for when you want to give an image a background if the height doesn't quite match the contents in the cells in the same row.
 
 This callout pairs well with metadata [hide title](#callout-hide-titlecss) and [hide background](#callout-hide-backgroundcss).
