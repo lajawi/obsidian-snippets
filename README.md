@@ -264,3 +264,11 @@ First line in the caption is reserved for the image or other content you want to
 > 
 > Cute little cats from Wikipedia
 ```
+
+### `callout-embedded-images-remove-scrolling.css`
+
+Fixes a bug where internal images when embedded in a callout cause the callout to have a scrollbar, due to the image automatically getting a 3px padding on the right and bottom. Forum post about it can be found [here](https://forum.obsidian.md/t/callouts-become-scrollable-when-internal-images-are-embedded/112024).
+
+#### Usage
+
+No special usage besides enabling.
