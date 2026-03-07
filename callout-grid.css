@@ -4,7 +4,6 @@
 	--callout-color: unset;
 	background-color: unset;
 
-
 	&[data-callout-metadata~="columns-3"] {
 		--grid-columns: 3;
 	}
@@ -20,21 +19,21 @@
 	> .callout-content {
 		display: grid !important;
 		grid-template-columns: repeat(var(--grid-columns), 1fr);
-		align-items: center;
+		align-items: stretch;
 		gap: var(--size-4-1);
-
-		align-items: start;
 
 		> * {
 			margin: 0 !important;
 		}
 	}
 
+	&[data-callout-metadata~="align-center"] > .callout-content {
+		align-items: center;
+	}
+
 	&,
 	& .callout[data-callout="image"] {
 		padding: 0;
-
-		height: 100%;
 
 		> .callout-title {
 			display: none;
