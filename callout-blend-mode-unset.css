@@ -1,0 +1,4 @@
+.callout-blend-mode-unset,
+.callout[data-callout-metadata~="blend-unset"] {
+	--callout-blend-mode: normal;
+}

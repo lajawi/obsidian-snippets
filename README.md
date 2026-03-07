@@ -215,3 +215,22 @@ Unsets the minimum height imposed on only the list view of Bases.
 #### Usage
 
 No special usage besides enabling. Applies to all list view Bases.
+
+### `callout-blend-mode-unset.css`
+
+Set the callout blend mode to `normal`.
+
+#### Usage
+
+1. Add `callout-blend-mode-unset` to your `cssclasses` property of a note to apply it to the whole note or
+2. add the callout metadata `blend-unset` to a callout to apply it to specifically that callout.
+
+#### Example
+
+```yaml
+cssclasses:
+  - callout-blend-mode-unset
+```
+```md
+> [!note|blend-unset]
+```
