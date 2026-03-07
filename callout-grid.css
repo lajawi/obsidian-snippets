@@ -6,7 +6,7 @@
 	}
 
 	> .callout-content {
-		display: grid;
+		display: grid !important;
 		grid-template-columns: repeat(var(--grid-columns), 1fr);
 		align-items: center;
 		gap: var(--size-4-1);
