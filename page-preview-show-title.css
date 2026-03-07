@@ -1,0 +1,5 @@
+/* Credit: https://forum.obsidian.md/t/show-title-in-page-preview/60363/3 */
+
+.hover-popover .inline-title {
+  display: block;
+}

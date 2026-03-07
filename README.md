@@ -272,3 +272,11 @@ Fixes a bug where internal images when embedded in a callout cause the callout t
 #### Usage
 
 No special usage besides enabling.
+
+### `page-preview-show-title.css`
+
+Makes the title visible in the page previews.
+
+#### Usage
+
+No special usage besides enabling.
