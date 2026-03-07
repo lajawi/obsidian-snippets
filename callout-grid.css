@@ -1,6 +1,10 @@
 .callout[data-callout="grid"] {
 	--grid-columns: 2;
 
+	--callout-color: unset;
+	background-color: unset;
+
+
 	&[data-callout-metadata~="columns-3"] {
 		--grid-columns: 3;
 	}
@@ -16,11 +20,6 @@
 		> * {
 			margin: 0 !important;
 		}
-	}
-
-	& {
-		--callout-color: unset;
-		background-color: unset;
 	}
 
 	&,
