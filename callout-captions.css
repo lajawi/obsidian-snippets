@@ -1,0 +1,21 @@
+.callout[data-callout="caption"] {
+	--callout-color: var(--callout-quote);
+	--callout-blend-mode: normal;
+	padding: 0;
+	text-align: center;
+	width: fit-content;
+
+	> .callout-title {
+		display: none;
+	}
+
+	> .callout-content {
+		> :first-child {
+			margin: 0;
+		}
+
+		> p {
+			margin: var(--size-2-2) var(--size-2-3);
+		}
+	}
+}
