@@ -62,7 +62,7 @@ Learn to [add and enable a snippet on Obsidian's Help Site](https://help.obsidia
 ### Alt
 
 > [!TIP]
-> Alt text is added to an embedded in the square brackets, after the file name itself with a pipe (`|`):
+> Alt text is added to an embedded base in the square brackets, after the file name itself with a pipe (`|`):
 > ```md
 > ![[Games.base|alt another-alt]]
 > ```
