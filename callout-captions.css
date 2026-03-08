@@ -10,6 +10,8 @@
 	}
 
 	> .callout-content {
+		break-inside: avoid;
+
 		> :first-child {
 			margin: 0;
 		}
