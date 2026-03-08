@@ -6,277 +6,86 @@ My personal [Obsidian](https://obsidian.md/) snippets.
 
 Learn to [add and enable a snippet on Obsidian's Help Site](https://help.obsidian.md/snippets#Adding+a+snippet).
 
-**How to add a `cssclass` to a note?**
-1. First, [add a property](https://help.obsidian.md/properties#Add+properties+to+a+note) named `cssclasses` (this is a default one provided by Obsidian)
-2. Add the class name detailed in the snippet description to apply it to the note
+## CSS Classes
 
-## Snippets
-
-### `bases-no-toolbar.css`
-
-A snippet to hide the Bases toolbar when embedded in a note.
-
-#### Usage
-
-1. Add `bases-no-toolbar` to your `cssclasses` property of a note to apply it to a whole note or
-2. add the alt text `no-toolbar` to an embedded Base (`![[games.base|no-toolbar]]`) to apply it to specifically that Base.
-
-#### Example
-
-```yaml
----
-cssclasses:
-  - bases-no-toolbar
----
-```
-```md
-![[games.base|no-toolbar]]
-```
-
-### `note-full-line-width.css`
-
-> Credit: https://forum.obsidian.md/t/optional-full-width-note-css/15444/7
-
-Negates the setting [`Readable line length`](https://help.obsidian.md/settings#Readable+line+length) for a note.
-
-#### Usage
-
-Add `full-width` to your `cssclasses` property of a note.
-
-#### Example
-```yaml
----
-cssclasses:
-  - full-width
----
-```
-
-### `table-alternating-colours.css`
-
-Alternates the colours of markdown tables.
-
-#### Usage
-
-No special usage besides enabling. Applies to all markdown tables.
-
-### `callout-chat.css`
-
-Adds a callout type `chat` with which you can display chats.
-
-Each chat bubble is displayed with yet another callout nested inside the `chat` callout. The chat bubbles get types `them` and `you` to denote who is sendig what message.
-
-If you add the metadata `group` to the `chat` callout (`chat|group`), then messages displayed as `them` retain their title.
-
-#### Usage
-
-1. Create a [callout](https://help.obsidian.md/callouts) with the *type identifier* `chat` (optionally add the metadata `group`, `chat|group`)
-2. Use [nested callouts](https://help.obsidian.md/callouts#Nested%20callouts) with type identifiers `them` and `you` for the messages
-  - Optionally, add another nested callout with type identifier `time` to display sent time
-3. Optionally, you can add a nested callout with type identifier `date` to display a change of date between messages
-
-#### Example
-
-##### Normal
-
-```md
-> [!chat] DM
-> > [!you]
-> > Aliquam erat volutpat. Praesent ac ante.
-> > > [!time] 20:45
+> [!TIP]
+> **How to add a `cssclass` to a note?**
+> 1. First, [add a property](https://help.obsidian.md/properties#Add+properties+to+a+note) named `cssclasses` (this is a default one provided by Obsidian)
+> 2. Add the class name detailed below to apply it to the note
 > 
-> > [!date] 2026.02.20
-> 
-> > [!you]
-> > Praesent vulputate euismod ligula. Ut ipsum.
-> > > [!time] 09:54
-> 
-> > [!them]
-> > Duis facilisis nulla quis mauris tempus, nec mattis tellus.
-> > > [!time] 11:31
-```
+> **Properties syntax at the top of the note**
+> ```yaml
+> ---
+> cssclasses:
+>   - cssclass-goes-here
+> ---
+> ```
 
-##### Group
+| CSS Class                  | Description                                                                                                     | Snippet File                                                   |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| `full-width`               | Negates the setting [`Readable line length`](https://help.obsidian.md/settings#Readable+line+length) for a note | [`note-full-line-width.css`](note-full-line-width.css)         |
+| `bases-no-toolbar`         | Hides a base's toolbar, including those in code blocks[^1]                                                      | [`bases-no-toolbar.css`](bases-no-toolbar.css)                 |
+| `callout-blend-mode-unset` | Sets all callouts' blend mode in the note to `normal`[^2]                                                       | [`callout-blend-mode-unset.css`](callout-blend-mode-unset.css) |
 
-```md
-> [!chat|group] Group
-> > [!date] 2026.02.19
-> 
-> > [!them] Alice
-> > Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-> > > [!time] 15:21
-> 
-> > [!you]
-> > Donec congue, tortor vitae interdum.
-> > > [!time] 15:24
-> 
-> > [!them] Bob
-> > Sed nec lorem et urna.
-> > > [!time] 15:24
-> 
-> > [!date] 2026.02.20
-> 
-> > [!you]
-> > Praesent felis.
-> > > [!time] 10:36
-```
+## Callouts
 
-### `print-no-breaks-after-heading.css`
+[More info on callouts.](https://help.obsidian.md/callouts)
 
-Avoids putting a page break right after any heading or callout title when exporting to PDF or printing.
+### Types
 
-#### Usage
+| Type         | Description                                                                   | Snippet File                               |
+| ------------ | ----------------------------------------------------------------------------- | ------------------------------------------ |
+| `[!chat]`    | Display chats with nested callouts, [more info](callout-chat.md)              | [`callout-chat.css`](callout-chat.css)     |
+| `[!grid]`    | Structure content inside this callout in a grid, [more info](callout-grid.md) | [`callout-grid.css`](callout-grid.css)     |
+| `[!caption]` | Caption images or other content, [more info](callout-captions.md)             | [`callout-captions`](callout-captions.css) |
 
-No special usage besides enabling. Applies to any note that is being exported.
+### Metadata
 
-### `callout-hide-title.css`
+> [!TIP]
+> Metadata is added to a callout in the square brackets of the type identifier, after the type itself with a pipe (`|`):
+> ```md
+> > [!type|metadata another-metadata]
+> ```
 
-Hides the title of the specified callout.
+| Metadata          | Abbreviation | Description                                   | Snippet File                                                   |
+| ----------------- | ------------ | --------------------------------------------- | -------------------------------------------------------------- |
+| `hide-title`      |              | Hides the callout's title                     | [`callout-hide-title`](callout-hide-title.css)                 |
+| `hide-background` | `hide-bg`    | Hides the callout's background                | [`callout-hide-background.css`](callout-hide-background.css)   |
+| `border`          |              | Adds a border to the callout                  | [`callout-border.css`](callout-border.css)                     |
+| `blend-unset`     |              | Sets the callout's blend mode to `normal`[^3] | [`callout-blend-mode-unset.css`](callout-blend-mode-unset.css) |
 
-#### Usage
+## Bases
 
-Add `hide-title` to the metadata of a callout.
+### Alt
 
-#### Example
+> [!TIP]
+> Alt text is added to an embedded in the square brackets, after the file name itself with a pipe (`|`):
+> ```md
+> ![[Games.base|alt another-alt]]
+> ```
 
-```md
-> [!note|hide-title] This title is hidden
-> Only the callout's contents are displayed.
-```
+> [!IMPORTANT]
+> Alt text can only be added to bases that are *not* embedded through a code block directly. To apply the `no-toolbar` class to the full note, see [CSS Classes](#css-classes).
 
-### `callout-hide-background.css`
+| Alt          | Description                  | Snippet File                                   |
+| ------------ | ---------------------------- | ---------------------------------------------- |
+| `no-toolbar` | Hides the base's toolbar[^3] | [`bases-no-toolbar.css`](bases-no-toolbar.css) |
 
-Hides the background of the specified callout.
+## Other
 
-#### Usage
+> [!TIP]
+> These snippets only need to be enabled, and take effect on the full vault.
 
-Add `hide-bg` or `hide-background` to the metadata of a callout.
+| Snippet File                                                                                   | Description                                                                                                                                                                                                                                                                                                                 |
+| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`print-no-breaks-after-heading.css`](print-no-breaks-after-heading.css)                       | Avoids putting a page break right after any heading or callout title when exporting to PDF or printing                                                                                                                                                                                                                      |
+| [`table-alternating-colours.css`](table-alternating-colours.css)                               | Alternates the colours of markdown tables                                                                                                                                                                                                                                                                                   |
+| [`page-preview-show-title.css`](page-preview-show-title.css)                                   | Makes the title visible in the page previews                                                                                                                                                                                                                                                                                |
+| [`bases-list-unset-min-height.css`](bases-list-unset-min-height.css)                           | Unsets the minimum height imposed on only the list view of Bases                                                                                                                                                                                                                                                            |
+| [`callout-embedded-images-remove-scrolling.css`](callout-embedded-images-remove-scrolling.css) | Fixes a bug where internal images when embedded in a callout cause the callout to have a scrollbar, due to the image automatically getting a 3px padding on the right and bottom. Forum post about it can be found [here](https://forum.obsidian.md/t/callouts-become-scrollable-when-internal-images-are-embedded/112024). |
 
-#### Example
+[^1]: Can be applied to individual embedded bases too, see [Bases > Alt](#alt) for more
 
-```md
-> [!note|hide-bg] This callout's background is not visible
-```
+[^2]: Can be applied to individual callouts too, see [Callouts > Metadata](#metadata) for more
 
-### `callout-border.css`
-
-Makes the border on the specified callout visible.
-
-#### Usage
-
-Add `border` to the metadata of a callout.
-
-#### Example
-
-```md
-> [!note|border] This callout has  border
-```
-
-### `callout-grid.css`
-
-Adds a callout type `grid` with which you can structure content in a grid instead of using tables.
-
-#### Usage
-
-1. Set the callout type identifier to `grid`, then add content with a blank line in between to separate it into the different grid cells.
-- Optionally add the callout metadata `columns-3`, `colums-4`, or `colums-5` to use 3, 4, or 5 columsn respectively, instead of 2 columns.
-- Optionally add the callout metadata `align-center` to align the items in the center, instead of stretching them.
-- Optionally use the nested callout type `image` for when you want to give an image a background if the height doesn't quite match the contents in the cells in the same row.
-
-This callout pairs well with metadata [hide title](#callout-hide-titlecss) and [hide background](#callout-hide-backgroundcss).
-
-#### Examples
-
-```md
-> [!grid|align-center] Cute Cat Pictures
-> ![Elegant black cat with vibrant eyes](https://upload.wikimedia.org/wikipedia/commons/5/53/Sheba1.JPG)
-> 
-> ![Slim brown-orange cat sitting looking up](https://upload.wikimedia.org/wikipedia/commons/9/9b/Gustav_chocolate.jpg)
-> 
-> ![Long stretched out cat on a stair](https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg)
-> 
-> ![Cat looking back walking in the snow](https://upload.wikimedia.org/wikipedia/commons/b/b6/Felis_catus-cat_on_snow.jpg)
-```
-```md
-> [!grid|columns-3]
-> > [!quote|hide-title]
-> > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend auctor turpis. Aliquam ac mi elementum, interdum lectus at, tincidunt mauris. Integer sagittis.
-> 
-> > [!image]
-> > ![Long stretched out cat on a stair](https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg)
-> 
-> > [!danger|hide-title hide-bg]
-> > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eleifend auctor turpis. Aliquam ac mi elementum, interdum lectus at, tincidunt mauris. Integer sagittis.
-```
-
-### `bases-list-unset-min-height.css`
-
-Unsets the minimum height imposed on only the list view of Bases.
-
-#### Usage
-
-No special usage besides enabling. Applies to all list view Bases.
-
-### `callout-blend-mode-unset.css`
-
-Set the callout blend mode to `normal`.
-
-#### Usage
-
-1. Add `callout-blend-mode-unset` to your `cssclasses` property of a note to apply it to the whole note or
-2. add the callout metadata `blend-unset` to a callout to apply it to specifically that callout.
-
-#### Example
-
-```yaml
-cssclasses:
-  - callout-blend-mode-unset
-```
-```md
-> [!note|blend-unset]
-```
-
-### `callout-captions.css`
-
-Adds a callout type `caption` with which you can caption images (it is *not* intended for screen readers, it won't format the elements correctly, prefer to use alt text as usual even when using this callout type).
-
-First line in the caption is reserved for the image or other content you want to caption, the second line for the caption itself.
-
-#### Usage
-
-1. Create a callout with the type identifier `caption`
-2. Use embedded content on the first line (under the title, the title is getting hidden)
-3. Put any caption underneath
-
-#### Example
-
-```md
-> [!caption]
-> ![Long stretched out cat on a stair](https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg)
-> 
-> Long stretched out cat on a stair
-```
-```md
-> [!caption]
-> > [!grid|align-center]
-> > ![Long stretched out cat on a stair](https://upload.wikimedia.org/wikipedia/commons/1/15/Cat_August_2010-4.jpg)
-> > 
-> > ![Cat looking back walking in the snow](https://upload.wikimedia.org/wikipedia/commons/b/b6/Felis_catus-cat_on_snow.jpg)
-> 
-> Cute little cats from Wikipedia
-```
-
-### `callout-embedded-images-remove-scrolling.css`
-
-Fixes a bug where internal images when embedded in a callout cause the callout to have a scrollbar, due to the image automatically getting a 3px padding on the right and bottom. Forum post about it can be found [here](https://forum.obsidian.md/t/callouts-become-scrollable-when-internal-images-are-embedded/112024).
-
-#### Usage
-
-No special usage besides enabling.
-
-### `page-preview-show-title.css`
-
-Makes the title visible in the page previews.
-
-#### Usage
-
-No special usage besides enabling.
+[^3]: Can be applied to the full note too, see [CSS Classes](#css-classes) for more
