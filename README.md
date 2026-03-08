@@ -6,6 +6,9 @@ My personal [Obsidian](https://obsidian.md/) snippets.
 
 Learn to [add and enable a snippet on Obsidian's Help Site](https://help.obsidian.md/snippets#Adding+a+snippet).
 
+> [!IMPORTANT]
+> For all of the below snippets, make sure to *enable* the relevant snippet file for the snippet to take effect.
+
 ## CSS Classes
 
 > [!TIP]
