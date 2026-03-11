@@ -3,7 +3,7 @@
 # Chat Callout
 
 > [!NOTE]
-> **Snippet File:** [`callout-chat.css`](callout-chat.css)
+> **Snippet File:** [`callout-chat.css`](/callout-chat.css)
 
 Adds a callout type `chat` with which you can display chats.
 

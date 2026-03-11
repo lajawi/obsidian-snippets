@@ -3,7 +3,7 @@
 # Caption Callout
 
 > [!NOTE]
-> **Snippet File:** [`callout-captions.css`](callout-captions.css)
+> **Snippet File:** [`callout-captions.css`](/callout-captions.css)
 
 Adds a callout type `caption` with which you can caption images (it is *not* intended for screen readers, it won't format the elements correctly, prefer to use alt text as usual even when using this callout type).
 

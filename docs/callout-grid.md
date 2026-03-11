@@ -3,7 +3,7 @@
 # Grid Callout
 
 > [!NOTE]
-> **Snippet File:** [`callout-grid.css`](callout-grid.css)
+> **Snippet File:** [`callout-grid.css`](/callout-grid.css)
 
 Adds a callout type `grid` with which you can structure content in a grid instead of using tables.
 
